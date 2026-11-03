@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-26",
+  "titleEn": "Door model W-26",
+  "category": "wood",
+  "model": "W-26",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w26/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 26,
+  "note": "",
+  "noteEn": ""
+}

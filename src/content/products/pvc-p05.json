@@ -1,10 +1,10 @@
 {
-  "title": "باب PVC موديل P-05",
-  "titleEn": "PVC door model P-05",
+  "title": "شباك PVC موديل P-05",
+  "titleEn": "PVC window model P-05",
   "category": "pvc",
   "model": "P-05",
-  "line": "أبواب",
-  "lineEn": "Doors",
+  "line": "",
+  "lineEn": "",
   "variants": [
     {
       "color": "",

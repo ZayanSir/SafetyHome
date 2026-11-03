@@ -30,7 +30,7 @@ content:
             - { value: spc, label: أرضيات SPC }
             - { value: floors, label: أرضيات }
             - { value: wood, label: أبواب خشب }
-            - { value: pvc, label: شبابيك وأبواب PVC }
+            - { value: pvc, label: شبابيك PVC }
       - { name: model, label: الكود / الموديل, type: string, required: true, description: 'مثلا D114 أو 306' }
       - { name: line, label: الخط بالعربي, type: string, description: 'سادة / بحفر / أوكراني / 3D مرسوم — بيظهر كفلتر في صفحة القسم' }
       - { name: lineEn, label: الخط بالإنجليزي, type: string }

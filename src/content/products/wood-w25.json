@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-25",
+  "titleEn": "Door model W-25",
+  "category": "wood",
+  "model": "W-25",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w25/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 25,
+  "note": "",
+  "noteEn": ""
+}

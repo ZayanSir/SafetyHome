@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-27",
+  "titleEn": "Door model W-27",
+  "category": "wood",
+  "model": "W-27",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w27/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 27,
+  "note": "",
+  "noteEn": ""
+}

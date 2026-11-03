@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-29",
+  "titleEn": "Door model W-29",
+  "category": "wood",
+  "model": "W-29",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w29/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 29,
+  "note": "",
+  "noteEn": ""
+}

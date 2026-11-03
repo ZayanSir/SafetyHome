@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-24",
+  "titleEn": "Door model W-24",
+  "category": "wood",
+  "model": "W-24",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w24/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 24,
+  "note": "",
+  "noteEn": ""
+}

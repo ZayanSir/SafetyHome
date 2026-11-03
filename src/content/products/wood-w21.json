@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-21",
+  "titleEn": "Door model W-21",
+  "category": "wood",
+  "model": "W-21",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w21/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 21,
+  "note": "",
+  "noteEn": ""
+}

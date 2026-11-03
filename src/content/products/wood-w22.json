@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-22",
+  "titleEn": "Door model W-22",
+  "category": "wood",
+  "model": "W-22",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w22/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 22,
+  "note": "",
+  "noteEn": ""
+}

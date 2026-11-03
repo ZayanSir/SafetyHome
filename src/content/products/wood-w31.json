@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-31",
+  "titleEn": "Door model W-31",
+  "category": "wood",
+  "model": "W-31",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w31/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 31,
+  "note": "",
+  "noteEn": ""
+}

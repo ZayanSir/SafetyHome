@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-23",
+  "titleEn": "Door model W-23",
+  "category": "wood",
+  "model": "W-23",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w23/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 23,
+  "note": "",
+  "noteEn": ""
+}

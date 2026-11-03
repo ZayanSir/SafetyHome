@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-28",
+  "titleEn": "Door model W-28",
+  "category": "wood",
+  "model": "W-28",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w28/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 28,
+  "note": "",
+  "noteEn": ""
+}

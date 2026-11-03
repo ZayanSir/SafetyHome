@@ -3,8 +3,8 @@
   "titleEn": "PVC window model P-13",
   "category": "pvc",
   "model": "P-13",
-  "line": "شبابيك",
-  "lineEn": "Windows",
+  "line": "",
+  "lineEn": "",
   "variants": [
     {
       "color": "",
@@ -13,7 +13,7 @@
   ],
   "sizes": [],
   "customSizes": true,
-  "featured": true,
+  "featured": false,
   "order": 13,
   "note": "",
   "noteEn": ""

@@ -119,17 +119,17 @@ export const CATEGORIES: Category[] = [
   },
   {
     slug: 'pvc',
-    ar: 'شبابيك وأبواب PVC',
-    en: 'PVC windows & doors',
-    shortAr: 'PVC',
+    ar: 'شبابيك PVC',
+    en: 'PVC windows',
+    shortAr: 'شبابيك PVC',
     shortEn: 'PVC',
-    introAr: 'شبابيك وأبواب PVC عازلة للحرارة والصوت، بمقاسات حسب الطلب. دي صور من شغل اتركّب عند زباينّا.',
-    introEn: 'Heat- and sound-insulating PVC windows and doors, made to measure. These are photos of jobs we installed for our customers.',
+    introAr: 'شبابيك PVC عازلة للحرارة والصوت، بمقاسات حسب الطلب. دي صور من شغل اتركّب عند زباينّا.',
+    introEn: 'Heat- and sound-insulating PVC windows, made to measure. These are photos of jobs we installed for our customers.',
     specsAr: [['المقاس', 'حسب الفتحة — بنقيس عندك'], ['التركيب', 'فريق سيفتى هوم']],
     specsEn: [['Size', 'Made to measure — we measure on site'], ['Installation', 'By the Safety Home team']],
     featuresAr: ['عازل للحرارة', 'عازل للصوت', 'مقاسات حسب الطلب'],
     featuresEn: ['Heat insulating', 'Sound insulating', 'Made to measure'],
-    cover: '/products/pvc-p13/main-sm.webp',
+    cover: '/products/pvc-p01/main-sm.webp',
   },
 ];
 

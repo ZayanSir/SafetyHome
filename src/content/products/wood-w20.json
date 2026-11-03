@@ -1,0 +1,20 @@
+{
+  "title": "باب موديل W-20",
+  "titleEn": "Door model W-20",
+  "category": "wood",
+  "model": "W-20",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w20/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 20,
+  "note": "",
+  "noteEn": ""
+}
