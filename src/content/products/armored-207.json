@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 207",
+  "titleEn": "Turkish armored door code 207",
+  "category": "armored",
+  "model": "207",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-207/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 12,
+  "note": "",
+  "noteEn": ""
+}

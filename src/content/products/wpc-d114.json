@@ -1,0 +1,85 @@
+{
+  "title": "باب WPC سادة D114",
+  "titleEn": "WPC door Plain D114",
+  "category": "wpc",
+  "model": "D114",
+  "line": "سادة",
+  "lineEn": "Plain",
+  "variants": [
+    {
+      "color": "C182",
+      "image": "/products/wpc-d114/C182.webp"
+    },
+    {
+      "color": "C102",
+      "image": "/products/wpc-d114/C102.webp"
+    },
+    {
+      "color": "C205",
+      "image": "/products/wpc-d114/C205.webp"
+    },
+    {
+      "color": "C132",
+      "image": "/products/wpc-d114/C132.webp"
+    },
+    {
+      "color": "C173",
+      "image": "/products/wpc-d114/C173.webp"
+    },
+    {
+      "color": "C160",
+      "image": "/products/wpc-d114/C160.webp"
+    },
+    {
+      "color": "C198",
+      "image": "/products/wpc-d114/C198.webp"
+    },
+    {
+      "color": "C115",
+      "image": "/products/wpc-d114/C115.webp"
+    },
+    {
+      "color": "C091",
+      "image": "/products/wpc-d114/C091.webp"
+    },
+    {
+      "color": "C021",
+      "image": "/products/wpc-d114/C021.webp"
+    },
+    {
+      "color": "C8001",
+      "image": "/products/wpc-d114/C8001.webp"
+    }
+  ],
+  "sizes": [
+    {
+      "width": 80,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 90,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 100,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 110,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    }
+  ],
+  "customSizes": true,
+  "featured": true,
+  "order": 1,
+  "note": "",
+  "noteEn": ""
+}

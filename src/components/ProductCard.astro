@@ -1,0 +1,51 @@
+---
+import type { Lang } from '../data/categories';
+import { T, href, fmtPrice, pick } from '../i18n';
+import { type Product, slugOf, priceOf, smallImg, isScene } from '../lib/products';
+import { colorName } from '../data/colors';
+
+interface Props { p: Product; lang: Lang; eager?: boolean }
+const { p, lang, eager = false } = Astro.props;
+const t = T[lang];
+const d = p.data;
+const v0 = d.variants[0];
+const { price, old } = priceOf(p);
+const colors = d.variants.map((v) => v.color).filter(Boolean);
+const scene = isScene(p);
+const name = pick(lang, d.title, d.titleEn);
+const hasSizes = (d.sizes ?? []).some((s) => s.price);
+---
+<a class="card reveal" href={href(lang, `/${d.category}/${slugOf(p)}/`)} data-line={d.line} data-colors={colors.join(' ')}>
+  <div class:list={['ph', { full: scene }]}>
+    <img
+      src={smallImg(v0.image)}
+      alt={name}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      width="300"
+      height="620"
+    />
+    {old && price && old > price && <span class="badge sale">{t.sale}</span>}
+  </div>
+  <div class="body">
+    <span class="code">{d.model}</span>
+    <span class="name">{name}</span>
+    <div class="row">
+      {price ? (
+        <span class="price">
+          {hasSizes && <small style="font-weight:400;color:var(--muted);font-size:12px">{t.from} </small>}
+          {fmtPrice(price, lang)}
+          {old && old > price && <del>{fmtPrice(old, lang)}</del>}
+        </span>
+      ) : (
+        <span class="price ask">{t.askPrice}</span>
+      )}
+      {colors.length > 1 && (
+        <span class="dots" aria-label={colors.map((c) => colorName(c, lang)).join('، ')}>
+          {colors.slice(0, 4).map((c) => <i style={`background-image:url(/swatches/${c}.webp)`} />)}
+          {colors.length > 4 && <small>+{colors.length - 4}</small>}
+        </span>
+      )}
+    </div>
+  </div>
+</a>

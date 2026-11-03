@@ -1,0 +1,92 @@
+media:
+  input: public/products
+  output: /products
+  extensions: [webp, jpg, jpeg, png]
+
+content:
+  - name: products
+    label: المنتجات
+    type: collection
+    path: src/content/products
+    format: json
+    filename: '{fields.category}-{fields.model}.json'
+    view:
+      fields: [model, title, category, featured]
+      primary: model
+      sort: [category, order]
+      search: [model, title]
+    fields:
+      - { name: title, label: الاسم بالعربي, type: string, required: true }
+      - { name: titleEn, label: الاسم بالإنجليزي, type: string }
+      - name: category
+        label: القسم
+        type: select
+        required: true
+        options:
+          values:
+            - { value: armored, label: أبواب مصفحة تركي }
+            - { value: wpc, label: أبواب WPC }
+            - { value: room, label: أبواب غرف جاهزة }
+            - { value: wood, label: أبواب خشب }
+            - { value: pvc, label: شبابيك PVC }
+      - { name: model, label: الكود / الموديل, type: string, required: true, description: 'مثلا D114 أو 306' }
+      - { name: line, label: الخط بالعربي, type: string, description: 'سادة / بحفر / أوكراني / 3D مرسوم — بيظهر كفلتر في صفحة القسم' }
+      - { name: lineEn, label: الخط بالإنجليزي, type: string }
+      - name: variants
+        label: الألوان والصور
+        type: object
+        list: { min: 1 }
+        description: 'أول صورة هي اللي بتظهر في الكارت'
+        fields:
+          - { name: color, label: كود اللون, type: string, description: 'زي C182 — سيبه فاضي لو الباب لون واحد' }
+          - { name: image, label: الصورة, type: image, required: true }
+      - name: sizes
+        label: المقاسات والأسعار
+        type: object
+        list: true
+        description: 'سيب السعر فاضي عشان يظهر «اسأل عن السعر»'
+        fields:
+          - { name: width, label: العرض (سم), type: number, required: true }
+          - { name: height, label: الارتفاع (سم), type: number, required: true }
+          - { name: price, label: السعر, type: number }
+          - { name: oldPrice, label: السعر قبل الخصم, type: number }
+      - { name: price, label: السعر (لو مفيش مقاسات), type: number }
+      - { name: oldPrice, label: السعر قبل الخصم (لو مفيش مقاسات), type: number }
+      - { name: customSizes, label: بنعمل مقاسات خاصة, type: boolean, default: true }
+      - { name: featured, label: يظهر في الرئيسية, type: boolean, default: false }
+      - { name: hidden, label: مخفي من الموقع, type: boolean, default: false }
+      - { name: order, label: الترتيب, type: number, default: 100 }
+      - { name: note, label: ملاحظة بالعربي, type: text }
+      - { name: noteEn, label: ملاحظة بالإنجليزي, type: text }
+
+  - name: settings
+    label: بيانات الموقع
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: brand, label: الاسم بالإنجليزي, type: string }
+      - { name: brandAr, label: الاسم بالعربي, type: string }
+      - { name: taglineAr, label: الوصف القصير بالعربي, type: string }
+      - { name: taglineEn, label: الوصف القصير بالإنجليزي, type: string }
+      - { name: url, label: رابط الموقع, type: string }
+      - { name: whatsapp, label: رقم الواتساب (بصيغة 2011...), type: string }
+      - { name: phone, label: رقم التليفون, type: string }
+      - { name: addressAr, label: العنوان بالعربي, type: string }
+      - { name: addressEn, label: العنوان بالإنجليزي, type: string }
+      - { name: hoursAr, label: المواعيد بالعربي, type: string }
+      - { name: hoursEn, label: المواعيد بالإنجليزي, type: string }
+      - { name: mapsUrl, label: لينك جوجل ماب, type: string }
+      - { name: mapEmbedQuery, label: اسم المكان على الخريطة, type: string }
+      - { name: facebook, label: فيسبوك, type: string }
+      - { name: instagram, label: إنستجرام, type: string }
+      - { name: tiktok, label: تيك توك, type: string }
+      - { name: metaPixelId, label: Meta Pixel ID, type: string }
+      - { name: heroYoutubeId, label: كود فيديو يوتيوب للرئيسية, type: string }
+      - { name: heroVideoFile, label: ملف فيديو للرئيسية (بدل يوتيوب), type: file }
+      - { name: heroTitleAr, label: عنوان الرئيسية بالعربي, type: string }
+      - { name: heroTitleEn, label: عنوان الرئيسية بالإنجليزي, type: string }
+      - { name: heroTextAr, label: نص الرئيسية بالعربي, type: text }
+      - { name: heroTextEn, label: نص الرئيسية بالإنجليزي, type: text }
+      - { name: currencyAr, label: العملة بالعربي, type: string }
+      - { name: currencyEn, label: العملة بالإنجليزي, type: string }

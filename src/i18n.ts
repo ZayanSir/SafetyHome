@@ -1,0 +1,119 @@
+import type { Lang } from './data/categories';
+import site from './data/site.json';
+
+export const T = {
+  ar: {
+    dir: 'rtl',
+    home: 'الرئيسية',
+    products: 'المنتجات',
+    contact: 'المعرض',
+    switchLang: 'English',
+    switchLabel: 'Switch to English',
+    orderWa: 'اطلب على واتساب',
+    askPrice: 'اسأل عن السعر',
+    askWa: 'اسأل على واتساب',
+    call: 'اتصل بينا',
+    browse: 'اتفرّج على الموديلات',
+    visit: 'زور المعرض',
+    allModels: 'كل الموديلات',
+    seeAll: 'شوف الكل',
+    featured: 'موديلات مختارة',
+    categories: 'الأقسام',
+    color: 'اللون',
+    size: 'المقاس',
+    sizeCm: 'سم',
+    customSize: 'مقاس خاص؟ بنفّذ حسب الطلب',
+    measureOnSite: 'المقاس حسب فتحة الباب — بنقيس عندك',
+    specs: 'المواصفات',
+    code: 'الكود',
+    models: 'موديل',
+    from: 'يبدأ من',
+    soon: 'الموديلات بتتضاف قريب',
+    soonText: 'ابعتلنا على واتساب ونبعتلك صور الموديلات المتاحة دلوقتي في المعرض.',
+    showroom: 'المعرض',
+    address: 'العنوان',
+    hours: 'المواعيد',
+    hoursAsk: 'اسألنا على واتساب عن المواعيد',
+    directions: 'افتح على الخريطة',
+    follow: 'تابعنا',
+    footerCta: 'شوفت باب عجبك؟',
+    footerCtaText: 'ابعتلنا الكود على واتساب، أو تعالى اتفرّج عليه في المعرض.',
+    rights: 'كل الحقوق محفوظة',
+    back: 'رجوع',
+    filterColor: 'كل الألوان',
+    line: 'الخط',
+    all: 'الكل',
+    waMsg: (t: string) => `السلام عليكم، عايز أستفسر عن ${t} — من الموقع`,
+    waGeneric: 'السلام عليكم، عايز أستفسر عن الأبواب — من الموقع',
+    skip: 'تخطّى للمحتوى',
+    menu: 'القائمة',
+    sale: 'خصم',
+    similar: 'موديلات تانية',
+    priceNote: 'الأسعار قابلة للتغيير — أكّد السعر على واتساب',
+  },
+  en: {
+    dir: 'ltr',
+    home: 'Home',
+    products: 'Products',
+    contact: 'Showroom',
+    switchLang: 'عربي',
+    switchLabel: 'التحويل للعربي',
+    orderWa: 'Order on WhatsApp',
+    askPrice: 'Ask for price',
+    askWa: 'Ask on WhatsApp',
+    call: 'Call us',
+    browse: 'Browse models',
+    visit: 'Visit the showroom',
+    allModels: 'All models',
+    seeAll: 'See all',
+    featured: 'Featured models',
+    categories: 'Categories',
+    color: 'Color',
+    size: 'Size',
+    sizeCm: 'cm',
+    customSize: 'Need a custom size? We make to order',
+    measureOnSite: 'Sized to your opening — we measure on site',
+    specs: 'Specifications',
+    code: 'Code',
+    models: 'models',
+    from: 'From',
+    soon: 'Models coming soon',
+    soonText: 'Message us on WhatsApp and we will send photos of what is in the showroom now.',
+    showroom: 'Showroom',
+    address: 'Address',
+    hours: 'Opening hours',
+    hoursAsk: 'Ask us on WhatsApp for opening hours',
+    directions: 'Open in Maps',
+    follow: 'Follow us',
+    footerCta: 'Found a door you like?',
+    footerCtaText: 'Send us the code on WhatsApp, or come and see it in the showroom.',
+    rights: 'All rights reserved',
+    back: 'Back',
+    filterColor: 'All colors',
+    line: 'Line',
+    all: 'All',
+    waMsg: (t: string) => `Hello, I'd like to ask about ${t} — from the website`,
+    waGeneric: "Hello, I'd like to ask about your doors — from the website",
+    skip: 'Skip to content',
+    menu: 'Menu',
+    sale: 'Sale',
+    similar: 'More models',
+    priceNote: 'Prices may change — confirm on WhatsApp',
+  },
+} as const;
+
+export const base = (lang: Lang) => (lang === 'ar' ? '' : '/en');
+export const href = (lang: Lang, path: string) => `${base(lang)}${path}`;
+export const pick = (lang: Lang, ar: string, en?: string) => (lang === 'en' && en ? en : ar);
+
+export const waLink = (text: string) =>
+  `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
+
+export const fmtPrice = (n: number, lang: Lang) =>
+  new Intl.NumberFormat(lang === 'ar' ? 'ar-EG' : 'en-EG').format(n) +
+  ' ' +
+  (lang === 'ar' ? site.currencyAr : site.currencyEn);
+
+/** Map the other language's URL for the language switch */
+export const otherPath = (lang: Lang, path: string) =>
+  lang === 'ar' ? `/en${path}` : path.replace(/^\/en/, '') || '/';

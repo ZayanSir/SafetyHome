@@ -1,0 +1,238 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import site from '../data/site.json';
+import { type Lang, catBySlug } from '../data/categories';
+import { T, href, pick, fmtPrice } from '../i18n';
+import { type Product, getProducts, slugOf, isScene, priceOf } from '../lib/products';
+import { colorName } from '../data/colors';
+interface Props { lang: Lang; p: Product }
+const { lang, p } = Astro.props;
+const t = T[lang];
+const d = p.data;
+const c = catBySlug(d.category);
+const name = pick(lang, d.title, d.titleEn);
+const scene = isScene(p);
+const sizes = d.sizes ?? [];
+const firstPriced = Math.max(0, sizes.findIndex((s) => s.price));
+const { price, old } = priceOf(p);
+const specs = lang === 'ar' ? c.specsAr : c.specsEn;
+const features = lang === 'ar' ? c.featuresAr : c.featuresEn;
+const featIcons = ['drop', 'flame', 'volume', 'bug', 'brush', 'wrench'];
+const note = pick(lang, d.note, d.noteEn);
+const others = (await getProducts(d.category)).filter((x) => x.id !== p.id);
+const similar = others.filter((x) => x.data.line === d.line).concat(others.filter((x) => x.data.line !== d.line)).slice(0, 4);
+const catTitle = pick(lang, c.ar, c.en);
+const msgBase = {
+  ar: { hi: 'السلام عليكم، عايز أستفسر عن', color: 'لون', size: 'مقاس', price: 'السعر في الموقع', from: 'من الموقع' },
+  en: { hi: "Hello, I'd like to ask about", color: 'color', size: 'size', price: 'website price', from: 'from the website' },
+}[lang];
+const jsonld = [
+  {
+    '@context': 'https://schema.org', '@type': 'Product', name, sku: d.model, category: catTitle,
+    image: d.variants.map((v) => new URL(v.image, site.url).href),
+    brand: { '@type': 'Brand', name: site.brand },
+    ...(price ? { offers: { '@type': 'Offer', priceCurrency: 'EGP', price, availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: site.brand } } } : {}),
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t.home, item: new URL(href(lang, '/'), site.url).href },
+      { '@type': 'ListItem', position: 2, name: catTitle, item: new URL(href(lang, `/${c.slug}/`), site.url).href },
+      { '@type': 'ListItem', position: 3, name },
+    ],
+  },
+];
+const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.height}`;
+---
+<Base lang={lang} title={`${d.model} — ${name}`} description={`${name} — ${pick(lang, c.introAr, c.introEn)}`} image={d.variants[0].image} current="products" jsonld={jsonld}>
+  <div class="wrap page-head" style="padding-bottom:18px">
+    <nav class="crumbs" aria-label={pick(lang, 'مسار الصفحة', 'Breadcrumb')}>
+      <a href={href(lang, '/')}>{t.home}</a><Icon name="chevron" class="flip" />
+      <a href={href(lang, `/${c.slug}/`)}>{catTitle}</a><Icon name="chevron" class="flip" />
+      <span aria-current="page">{d.model}</span>
+    </nav>
+  </div>
+
+  <div class="wrap pd" data-product
+    data-model={d.model}
+    data-name={name}
+    data-wa={site.whatsapp}
+    data-lang={lang}
+    data-msg={JSON.stringify(msgBase)}
+  >
+    <div class="pd-media">
+      <div class:list={['pd-stage', { full: scene }]}>
+        <img id="pd-img" src={d.variants[0].image} alt={`${name} ${d.variants[0].color}`} width="520" height="1100" fetchpriority="high" />
+      </div>
+      {d.variants.length > 1 && (
+        <div class="pd-thumbs" aria-hidden="true">
+          {d.variants.map((v, i) => (
+            <button type="button" tabindex="-1" aria-pressed={i === 0 ? 'true' : 'false'} data-i={i}>
+              <img src={v.image.replace(/\.webp$/, '-sm.webp')} alt="" loading="lazy" width="60" height="76" />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <div class="pd-info">
+      <div style="display:grid;gap:12px">
+        {d.line && <span class="pd-line">{pick(lang, d.line, d.lineEn)}</span>}
+        <h1>{name}</h1>
+        <div class="pd-code">
+          <span>{t.code}: <b id="pd-code">{d.model}{d.variants[0].color ? `-${d.variants[0].color}` : ''}</b></span>
+          {d.variants.length > 1 && <span>{d.variants.length} {pick(lang, 'لون', 'colors')}</span>}
+        </div>
+      </div>
+
+      <div class="pd-price" aria-live="polite">
+        {price ? (
+          <>
+            <span class="price" id="pd-price">{fmtPrice(sizes[firstPriced]?.price ?? price, lang)}</span>
+            <del class="price" id="pd-old" style="color:var(--muted);font-weight:400;font-size:18px" hidden={!(sizes[firstPriced]?.oldPrice ?? old)}>{fmtPrice((sizes[firstPriced]?.oldPrice ?? old) || 0, lang)}</del>
+            <small>{t.priceNote}</small>
+          </>
+        ) : (
+          <>
+            <span class="price ask" id="pd-price">{t.askPrice}</span>
+            <small>{pick(lang, 'ابعتلنا الكود على واتساب ونرد عليك بالسعر والمتاح.', 'Send us the code on WhatsApp for price and availability.')}</small>
+          </>
+        )}
+      </div>
+
+      {d.variants.length > 1 && (
+        <fieldset>
+          <legend>{t.color}: <span id="pd-color-name">{colorName(d.variants[0].color, lang)} · {d.variants[0].color}</span></legend>
+          <div class="swatches">
+            {d.variants.map((v, i) => (
+              <label title={`${colorName(v.color, lang)} · ${v.color}`}>
+                <input type="radio" name="color" value={i} checked={i === 0} data-img={v.image} data-color={v.color} data-cname={colorName(v.color, lang)} aria-label={`${colorName(v.color, lang)} ${v.color}`} />
+                <i style={`background-image:url(/swatches/${v.color}.webp)`}></i>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      {sizes.length > 0 ? (
+        <fieldset>
+          <legend>{t.size} <span>({t.sizeCm})</span></legend>
+          <div class="sizes">
+            {sizes.map((s, i) => (
+              <label>
+                <input type="radio" name="size" value={sizeLabel(s)} checked={i === firstPriced} data-price={s.price ?? ''} data-old={s.oldPrice ?? ''} />
+                <span>{sizeLabel(s)}</span>
+              </label>
+            ))}
+          </div>
+          {d.customSizes && <p class="hint"><Icon name="ruler" />{t.customSize}</p>}
+        </fieldset>
+      ) : (
+        <p class="hint" style="margin:0"><Icon name="ruler" />{t.measureOnSite}</p>
+      )}
+
+      <div class="pd-cta">
+        <a class="btn btn-wa" id="pd-wa" data-wa href="#" target="_blank" rel="noopener"><Icon name="whatsapp" />{t.orderWa}</a>
+        <a class="btn btn-line" href={`tel:${site.phone}`} aria-label={t.call}><Icon name="phone" /></a>
+      </div>
+
+      {features.length > 0 && (
+        <div class="features">
+          {features.map((f, i) => <span><Icon name={d.category === 'wpc' ? featIcons[i] ?? 'check' : 'check'} />{f}</span>)}
+        </div>
+      )}
+
+      {note && <p>{note}</p>}
+
+      {specs.length > 0 && (
+        <div>
+          <h2 class="sub">{t.specs}</h2>
+          <table class="specs">
+            <tbody>{specs.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody>
+          </table>
+        </div>
+      )}
+      {c.makerAr && <p class="maker">{pick(lang, c.makerAr, c.makerEn)}</p>}
+    </div>
+  </div>
+
+  {similar.length > 0 && (
+    <section class="wrap" aria-labelledby="sim">
+      <div class="section-head">
+        <h2 id="sim">{t.similar}</h2>
+        <a class="link-more" href={href(lang, `/${c.slug}/`)}>{t.allModels}<Icon name="arrow" class="flip" /></a>
+      </div>
+      <div class="grid">{similar.map((x) => <ProductCard p={x} lang={lang} />)}</div>
+    </section>
+  )}
+
+  <div class="pd-sticky" id="pd-sticky">
+    <div class="t"><b id="st-code">{d.model}</b><small id="st-price">{price ? fmtPrice(sizes[firstPriced]?.price ?? price, lang) : t.askPrice}</small></div>
+    <a class="btn btn-wa" data-wa id="st-wa" href="#" target="_blank" rel="noopener"><Icon name="whatsapp" />{t.orderWa}</a>
+  </div>
+</Base>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-product]')!;
+  const { model, name, wa, lang } = root.dataset;
+  const m = JSON.parse(root.dataset.msg!);
+  const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-EG' : 'en-EG');
+  const cur = lang === 'ar' ? 'ج.م' : 'EGP';
+  const img = document.getElementById('pd-img') as HTMLImageElement;
+  const codeEl = document.getElementById('pd-code')!;
+  const priceEl = document.getElementById('pd-price');
+  const oldEl = document.getElementById('pd-old');
+  const thumbs = [...document.querySelectorAll<HTMLButtonElement>('.pd-thumbs button')];
+  const colorRadios = [...document.querySelectorAll<HTMLInputElement>('input[name=color]')];
+  const sizeRadios = [...document.querySelectorAll<HTMLInputElement>('input[name=size]')];
+  const waBtns = [document.getElementById('pd-wa'), document.getElementById('st-wa')] as HTMLAnchorElement[];
+
+  const state = () => {
+    const c = colorRadios.find((r) => r.checked);
+    const s = sizeRadios.find((r) => r.checked);
+    return { color: c?.dataset.color || '', cname: c?.dataset.cname || '', size: s?.value || '', price: s?.dataset.price || '', old: s?.dataset.old || '' };
+  };
+  const update = () => {
+    const st = state();
+    const code = st.color ? `${model}-${st.color}` : model!;
+    codeEl.textContent = code;
+    document.getElementById('st-code')!.textContent = code;
+    if (st.price && priceEl) {
+      priceEl.textContent = `${nf.format(+st.price)} ${cur}`;
+      document.getElementById('st-price')!.textContent = priceEl.textContent;
+      if (oldEl) { oldEl.hidden = !st.old; if (st.old) oldEl.textContent = `${nf.format(+st.old)} ${cur}`; }
+    }
+    const parts = [`${m.hi} ${name} (${code})`];
+    if (st.color) parts.push(`${m.color}: ${st.cname} ${st.color}`);
+    if (st.size) parts.push(`${m.size}: ${st.size}`);
+    if (st.price) parts.push(`${m.price}: ${nf.format(+st.price)} ${cur}`);
+    parts.push(m.from, location.href.split('?')[0]);
+    const url = `https://wa.me/${wa}?text=${encodeURIComponent(parts.join('\n'))}`;
+    waBtns.forEach((b) => b && (b.href = url));
+  };
+  const setColor = (i: number) => {
+    const r = colorRadios[i]; if (!r) return;
+    r.checked = true;
+    thumbs.forEach((t, k) => t.setAttribute('aria-pressed', String(k === i)));
+    document.getElementById('pd-color-name')!.textContent = `${r.dataset.cname} · ${r.dataset.color}`;
+    if (img.getAttribute('src') !== r.dataset.img) {
+      img.classList.add('swap');
+      const pre = new Image(); pre.src = r.dataset.img!;
+      pre.onload = () => { img.src = pre.src; img.alt = `${name} ${r.dataset.color}`; requestAnimationFrame(() => img.classList.remove('swap')); };
+    }
+    update();
+  };
+  colorRadios.forEach((r, i) => r.addEventListener('change', () => setColor(i)));
+  thumbs.forEach((t, i) => t.addEventListener('click', () => setColor(i)));
+  sizeRadios.forEach((r) => r.addEventListener('change', update));
+  update();
+
+  // sticky bar on mobile once the main CTA scrolls away
+  const sticky = document.getElementById('pd-sticky')!;
+  const main = document.getElementById('pd-wa')!;
+  new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0)).observe(main);
+  // @ts-ignore
+  if (window.fbq) window.fbq('track', 'ViewContent', { content_ids: [model], content_type: 'product' });
+</script>

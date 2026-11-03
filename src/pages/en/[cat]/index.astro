@@ -1,0 +1,7 @@
+---
+import Category from '../../../views/Category.astro';
+import { catPaths } from '../../../lib/paths';
+export const getStaticPaths = catPaths;
+const { cat } = Astro.params;
+---
+<Category lang="en" slug={cat!} />

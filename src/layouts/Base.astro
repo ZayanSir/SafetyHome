@@ -1,0 +1,191 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+import { CATEGORIES, type Lang } from '../data/categories';
+import { T, href, otherPath, waLink, pick } from '../i18n';
+import Icon from '../components/Icon.astro';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  image?: string;
+  current?: 'home' | 'products' | 'contact';
+  jsonld?: object[];
+}
+const { lang, title, description = pick(lang, site.heroTextAr, site.heroTextEn), image = '/og.jpg', current, jsonld = [] } = Astro.props;
+const t = T[lang];
+const path = Astro.url.pathname;
+const arPath = lang === 'ar' ? path : otherPath('en', path);
+const enPath = lang === 'en' ? path : otherPath('ar', path);
+const abs = (p: string) => new URL(p, site.url).href;
+const brandName = pick(lang, site.brandAr, site.brand);
+const fullTitle = title === brandName ? `${brandName} — ${pick(lang, site.taglineAr, site.taglineEn)}` : `${title} | ${brandName}`;
+const pixel = site.metaPixelId?.trim();
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: site.brand,
+  alternateName: site.brandAr,
+  url: site.url,
+  logo: abs('/brand/logo.png'),
+  image: abs(image),
+  telephone: '+2' + site.phone,
+  address: { '@type': 'PostalAddress', streetAddress: pick(lang, site.addressAr, site.addressEn), addressLocality: 'Tanta', addressRegion: 'Gharbia', addressCountry: 'EG' },
+  areaServed: 'Gharbia, Egypt',
+  sameAs: [site.facebook, site.instagram, site.tiktok].filter(Boolean),
+};
+---
+<!doctype html>
+<html lang={lang} dir={t.dir} class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={abs(path)} />
+    <link rel="alternate" hreflang="ar" href={abs(arPath)} />
+    <link rel="alternate" hreflang="en" href={abs(enPath)} />
+    <link rel="alternate" hreflang="x-default" href={abs(arPath)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={brandName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={abs(image)} />
+    <meta property="og:locale" content={lang === 'ar' ? 'ar_EG' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#f7f2eb" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href={lang === 'ar'
+        ? 'https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Archivo:wdth,wght@75..100,600..800&display=swap'
+        : 'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&display=swap'}
+    />
+    <script is:inline>document.documentElement.classList.remove('no-js')</script>
+    <script type="application/ld+json" set:html={JSON.stringify(org)} />
+    {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+    {pixel && (
+      <script is:inline define:vars={{ pixel }}>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', pixel); fbq('track', 'PageView');
+      </script>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">{t.skip}</a>
+    <header class="sh-header" id="top">
+      <div class="wrap sh-bar">
+        <a class="sh-logo" href={href(lang, '/')} aria-label={brandName}>
+          <img class="mark" src="/brand/mark.png" alt="" width="227" height="286" />
+          <img class="word" src="/brand/word.png" alt="Safety Home" width="329" height="88" />
+        </a>
+        <nav class="sh-nav" aria-label={t.menu}>
+          <a href={href(lang, '/')} aria-current={current === 'home' ? 'page' : undefined}>{t.home}</a>
+          {CATEGORIES.slice(0, 3).map((c) => (
+            <a href={href(lang, `/${c.slug}/`)} aria-current={path.includes(`/${c.slug}/`) ? 'page' : undefined}>{pick(lang, c.shortAr, c.shortEn)}</a>
+          ))}
+          <a href={href(lang, '/#categories')}>{pick(lang, 'كل الأقسام', 'All categories')}</a>
+          <a href={href(lang, '/showroom/')} aria-current={current === 'contact' ? 'page' : undefined}>{t.contact}</a>
+        </nav>
+        <div class="sh-actions">
+          <a class="sh-lang" href={lang === 'ar' ? enPath : arPath} hreflang={lang === 'ar' ? 'en' : 'ar'} lang={lang === 'ar' ? 'en' : 'ar'} aria-label={t.switchLabel}>{t.switchLang}</a>
+          <a class="btn btn-wa" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener" aria-label={t.askWa}>
+            <Icon name="whatsapp" /><span class="label">{pick(lang, 'واتساب', 'WhatsApp')}</span>
+          </a>
+          <button class="sh-menu-btn" type="button" aria-controls="sh-sheet" aria-expanded="false" aria-label={t.menu} data-menu-open>
+            <Icon name="menu" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="sh-sheet" id="sh-sheet" role="dialog" aria-modal="true" aria-label={t.menu}>
+      <div class="scrim" data-menu-close></div>
+      <div class="panel">
+        <div class="panel-top">
+          <a class="sh-logo" href={href(lang, '/')}><img class="mark" src="/brand/mark.png" alt="" width="227" height="286" style="height:36px" /><img class="word" src="/brand/word.png" alt="Safety Home" width="329" height="88" style="height:15px" /></a>
+          <button class="sh-menu-btn" style="display:inline-grid" type="button" aria-label={pick(lang, 'قفل القائمة', 'Close menu')} data-menu-close><Icon name="x" /></button>
+        </div>
+        <nav aria-label={t.menu}>
+          <a href={href(lang, '/')}>{t.home}<Icon name="chevron" class="flip" /></a>
+          {CATEGORIES.map((c) => <a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}<Icon name="chevron" class="flip" /></a>)}
+          <a href={href(lang, '/showroom/')}>{t.contact}<Icon name="chevron" class="flip" /></a>
+        </nav>
+        <a class="btn btn-wa btn-block" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
+      </div>
+    </div>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="sh-footer">
+      <div class="wrap f-cta">
+        <div>
+          <h2>{t.footerCta}</h2>
+          <p>{t.footerCtaText}</p>
+        </div>
+        <a class="btn btn-wa" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
+      </div>
+      <div class="wrap f-grid">
+        <div>
+          <img class="f-logo" src="/brand/logo-light.png" alt={brandName} width="329" height="389" loading="lazy" />
+          <p>{pick(lang, site.addressAr, site.addressEn)}</p>
+          <div class="socials">
+            {site.facebook && <a href={site.facebook} target="_blank" rel="noopener" aria-label="Facebook"><Icon name="facebook" /></a>}
+            {site.instagram && <a href={site.instagram} target="_blank" rel="noopener" aria-label="Instagram"><Icon name="instagram" /></a>}
+            {site.tiktok && <a href={site.tiktok} target="_blank" rel="noopener" aria-label="TikTok"><Icon name="tiktok" /></a>}
+          </div>
+        </div>
+        <div>
+          <h3>{t.products}</h3>
+          <ul>{CATEGORIES.map((c) => <li><a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}</a></li>)}</ul>
+        </div>
+        <div>
+          <h3>{t.showroom}</h3>
+          <ul>
+            <li><a href={href(lang, '/showroom/')}>{t.visit}</a></li>
+            <li><a href={`tel:${site.phone}`} dir="ltr">{site.phone}</a></li>
+            <li><a data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="wrap f-bottom">
+        <span>© {new Date().getFullYear()} {brandName} — {t.rights}</span>
+        <span>{pick(lang, 'تصميم وتنفيذ', 'Made by')} ZedFilmmaking</span>
+      </div>
+    </footer>
+
+    <a class="wa-fab" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener" aria-label={t.askWa}><Icon name="whatsapp" /></a>
+
+    <script>
+      const header = document.querySelector('.sh-header');
+      const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 8);
+      onScroll();
+      addEventListener('scroll', onScroll, { passive: true });
+
+      const sheet = document.getElementById('sh-sheet')!;
+      const openBtn = document.querySelector<HTMLButtonElement>('[data-menu-open]')!;
+      const open = () => { sheet.setAttribute('data-open', ''); openBtn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; sheet.querySelector<HTMLElement>('nav a')?.focus(); };
+      const close = () => { sheet.removeAttribute('data-open'); openBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; openBtn.focus(); };
+      openBtn.addEventListener('click', open);
+      sheet.querySelectorAll('[data-menu-close]').forEach((el) => el.addEventListener('click', close));
+      addEventListener('keydown', (e) => { if (e.key === 'Escape' && sheet.hasAttribute('data-open')) close(); });
+
+      // Meta Pixel: count WhatsApp clicks as Contact
+      document.addEventListener('click', (e) => {
+        const a = (e.target as HTMLElement).closest('[data-wa]');
+        // @ts-ignore
+        if (a && window.fbq) window.fbq('track', 'Contact');
+      });
+
+      // reveal on scroll
+      const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

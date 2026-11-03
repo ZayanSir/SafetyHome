@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 308",
+  "titleEn": "Turkish armored door code 308",
+  "category": "armored",
+  "model": "308",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-308/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 34,
+  "note": "",
+  "noteEn": ""
+}

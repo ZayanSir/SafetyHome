@@ -1,0 +1,45 @@
+{
+  "title": "باب WPC 3D مرسوم D82",
+  "titleEn": "WPC door 3D art D82",
+  "category": "wpc",
+  "model": "D82",
+  "line": "3D مرسوم",
+  "lineEn": "3D art",
+  "variants": [
+    {
+      "color": "C8001",
+      "image": "/products/wpc-d82/C8001.webp"
+    }
+  ],
+  "sizes": [
+    {
+      "width": 80,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 90,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 100,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 110,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    }
+  ],
+  "customSizes": true,
+  "featured": true,
+  "order": 26,
+  "note": "",
+  "noteEn": ""
+}

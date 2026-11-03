@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 304",
+  "titleEn": "Turkish armored door code 304",
+  "category": "armored",
+  "model": "304",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-304/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 31,
+  "note": "",
+  "noteEn": ""
+}

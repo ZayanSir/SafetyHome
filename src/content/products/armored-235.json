@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 235",
+  "titleEn": "Turkish armored door code 235",
+  "category": "armored",
+  "model": "235",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-235/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 21,
+  "note": "",
+  "noteEn": ""
+}

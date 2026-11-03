@@ -1,0 +1,36 @@
+---
+import site from '../data/site.json';
+import type { Lang } from '../data/categories';
+import { T, pick, waLink } from '../i18n';
+import Icon from './Icon.astro';
+interface Props { lang: Lang; heading?: 'h1' | 'h2' }
+const { lang, heading = 'h2' } = Astro.props;
+const t = T[lang];
+const H = heading;
+const q = encodeURIComponent(site.mapEmbedQuery || site.addressAr);
+const mapsUrl = site.mapsUrl || `https://www.google.com/maps/search/?api=1&query=${q}`;
+const hours = pick(lang, site.hoursAr, site.hoursEn);
+---
+<section class="showroom reveal" aria-labelledby="showroom-title">
+  <div class="txt">
+    <span class="eyebrow">{t.showroom}</span>
+    <H id="showroom-title">{pick(lang, 'تعالى شوف الباب على الطبيعة', 'See the doors in person')}</H>
+    <p>{pick(lang, 'المس الخامة بإيدك وقارن بين الموديلات براحتك. وإحنا بنقيس فتحة الباب عندك.', 'Touch the finishes, compare models at your own pace — and we measure your opening on site.')}</p>
+    <dl>
+      <div><dt>{t.address}</dt><dd>{pick(lang, site.addressAr, site.addressEn)}</dd></div>
+      <div><dt>{t.hours}</dt><dd>{hours || t.hoursAsk}</dd></div>
+      <div><dt>{pick(lang, 'تليفون', 'Phone')}</dt><dd><a href={`tel:${site.phone}`} dir="ltr">{site.phone}</a></dd></div>
+    </dl>
+    <div class="ctas">
+      <a class="btn btn-wa" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
+      <a class="btn btn-ghost" href={mapsUrl} target="_blank" rel="noopener"><Icon name="pin" />{t.directions}</a>
+    </div>
+  </div>
+  <div class="map">
+    <iframe
+      title={pick(lang, 'خريطة معرض سيفتى هوم', 'Safety Home showroom map')}
+      src={`https://www.google.com/maps?q=${q}&hl=${lang}&z=15&output=embed`}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { type Lang, catBySlug } from '../data/categories';
+import { T, href, pick, waLink } from '../i18n';
+import { getProducts } from '../lib/products';
+import { colorName } from '../data/colors';
+interface Props { lang: Lang; slug: string }
+const { lang, slug } = Astro.props;
+const t = T[lang];
+const c = catBySlug(slug);
+const items = await getProducts(slug);
+const lines = [...new Map(items.filter((p) => p.data.line).map((p) => [p.data.line, pick(lang, p.data.line, p.data.lineEn)])).entries()];
+const colors = [...new Set(items.flatMap((p) => p.data.variants.map((v) => v.color)).filter(Boolean))];
+const title = pick(lang, c.ar, c.en);
+const crumbs = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t.home, item: href(lang, '/') },
+    { '@type': 'ListItem', position: 2, name: title },
+  ],
+};
+---
+<Base lang={lang} title={title} description={pick(lang, c.introAr, c.introEn)} image={c.cover || undefined} current="products" jsonld={[crumbs]}>
+  <div class="wrap page-head">
+    <nav class="crumbs" aria-label={pick(lang, 'مسار الصفحة', 'Breadcrumb')}>
+      <a href={href(lang, '/')}>{t.home}</a><Icon name="chevron" class="flip" /><span aria-current="page">{title}</span>
+    </nav>
+    <h1>{title}</h1>
+    <p>{pick(lang, c.introAr, c.introEn)}</p>
+    {items.length > 0 && <span class="count" id="count" aria-live="polite">{items.length} {t.models}</span>}
+  </div>
+
+  <div class="wrap">
+    {items.length === 0 ? (
+      <div class="empty-state">
+        <Icon name={slug === 'pvc' ? 'window' : 'door'} class="big" />
+        <h2>{t.soon}</h2>
+        <p>{t.soonText}</p>
+        <a class="btn btn-wa" data-wa href={waLink(t.waMsg(title))} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
+      </div>
+    ) : (
+      <>
+        {lines.length > 1 && (
+          <div class="filters" role="group" aria-label={t.line}>
+            <button class="chip" type="button" aria-pressed="true" data-line="">{t.all}</button>
+            {lines.map(([l, label]) => <button class="chip" type="button" aria-pressed="false" data-line={l}>{label}</button>)}
+          </div>
+        )}
+        {colors.length > 1 && (
+          <div class="colorbar" role="group" aria-label={t.color}>
+            <button class="all" type="button" aria-pressed="true" data-color="">{t.filterColor}</button>
+            {colors.map((col) => (
+              <button type="button" aria-pressed="false" data-color={col} style={`background-image:url(/swatches/${col}.webp)`} aria-label={`${colorName(col, lang)} ${col}`} title={`${colorName(col, lang)} · ${col}`}></button>
+            ))}
+          </div>
+        )}
+        <div class="grid" id="grid">
+          {items.map((p, i) => <ProductCard p={p} lang={lang} eager={i < 4} />)}
+        </div>
+      </>
+    )}
+  </div>
+</Base>
+
+<script define:vars={{ modelsWord: t.models }}>
+  const grid = document.getElementById('grid');
+  if (grid) {
+    let line = '', color = '';
+    const cards = [...grid.querySelectorAll('.card')];
+    const count = document.getElementById('count');
+    const apply = () => {
+      let n = 0;
+      cards.forEach((c) => {
+        const ok = (!line || c.dataset.line === line) && (!color || (c.dataset.colors || '').split(' ').includes(color));
+        c.hidden = !ok; if (ok) { n++; c.classList.add('in'); }
+      });
+      if (count) count.textContent = `${n} ${modelsWord}`;
+    };
+    const bind = (sel, key) => document.querySelectorAll(sel).forEach((b) => b.addEventListener('click', () => {
+      document.querySelectorAll(sel).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      if (key === 'line') line = b.dataset.line; else color = b.dataset.color;
+      apply();
+    }));
+    bind('.filters .chip', 'line');
+    bind('.colorbar button', 'color');
+  }
+</script>

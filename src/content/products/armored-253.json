@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 253",
+  "titleEn": "Turkish armored door code 253",
+  "category": "armored",
+  "model": "253",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-253/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 26,
+  "note": "",
+  "noteEn": ""
+}

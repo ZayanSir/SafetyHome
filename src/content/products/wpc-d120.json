@@ -1,0 +1,65 @@
+{
+  "title": "باب WPC أوكراني D120",
+  "titleEn": "WPC door Ukrainian style D120",
+  "category": "wpc",
+  "model": "D120",
+  "line": "أوكراني",
+  "lineEn": "Ukrainian style",
+  "variants": [
+    {
+      "color": "C021",
+      "image": "/products/wpc-d120/C021.webp"
+    },
+    {
+      "color": "C091",
+      "image": "/products/wpc-d120/C091.webp"
+    },
+    {
+      "color": "C115",
+      "image": "/products/wpc-d120/C115.webp"
+    },
+    {
+      "color": "C160",
+      "image": "/products/wpc-d120/C160.webp"
+    },
+    {
+      "color": "C182",
+      "image": "/products/wpc-d120/C182.webp"
+    },
+    {
+      "color": "C205",
+      "image": "/products/wpc-d120/C205.webp"
+    }
+  ],
+  "sizes": [
+    {
+      "width": 80,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 90,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 100,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 110,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    }
+  ],
+  "customSizes": true,
+  "featured": true,
+  "order": 2,
+  "note": "",
+  "noteEn": ""
+}

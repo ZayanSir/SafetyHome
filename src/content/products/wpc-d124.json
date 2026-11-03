@@ -1,0 +1,49 @@
+{
+  "title": "باب WPC بحفر D124",
+  "titleEn": "WPC door Grooved D124",
+  "category": "wpc",
+  "model": "D124",
+  "line": "بحفر",
+  "lineEn": "Grooved",
+  "variants": [
+    {
+      "color": "C115",
+      "image": "/products/wpc-d124/C115.webp"
+    },
+    {
+      "color": "C198",
+      "image": "/products/wpc-d124/C198.webp"
+    }
+  ],
+  "sizes": [
+    {
+      "width": 80,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 90,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 100,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 110,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    }
+  ],
+  "customSizes": true,
+  "featured": false,
+  "order": 13,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 242",
+  "titleEn": "Turkish armored door code 242",
+  "category": "armored",
+  "model": "242",
+  "line": "مصفح تركي",
+  "lineEn": "Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-242/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 25,
+  "note": "",
+  "noteEn": ""
+}

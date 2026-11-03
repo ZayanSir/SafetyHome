@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Showroom from '../components/Showroom.astro';
+import site from '../data/site.json';
+import type { Lang } from '../data/categories';
+import { T, href, pick } from '../i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = T[lang];
+---
+<Base lang={lang} title={t.showroom} description={`${pick(lang, site.brandAr, site.brand)} — ${pick(lang, site.addressAr, site.addressEn)}`} current="contact">
+  <div class="wrap page-head">
+    <nav class="crumbs" aria-label={pick(lang, 'مسار الصفحة', 'Breadcrumb')}>
+      <a href={href(lang, '/')}>{t.home}</a><Icon name="chevron" class="flip" /><span aria-current="page">{t.showroom}</span>
+    </nav>
+  </div>
+  <div class="wrap"><Showroom lang={lang} heading="h1" /></div>
+</Base>

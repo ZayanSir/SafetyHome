@@ -1,0 +1,49 @@
+{
+  "title": "باب WPC بحفر D400",
+  "titleEn": "WPC door Grooved D400",
+  "category": "wpc",
+  "model": "D400",
+  "line": "بحفر",
+  "lineEn": "Grooved",
+  "variants": [
+    {
+      "color": "C182",
+      "image": "/products/wpc-d400/C182.webp"
+    },
+    {
+      "color": "C205",
+      "image": "/products/wpc-d400/C205.webp"
+    }
+  ],
+  "sizes": [
+    {
+      "width": 80,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 90,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 100,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    },
+    {
+      "width": 110,
+      "height": 215,
+      "price": null,
+      "oldPrice": null
+    }
+  ],
+  "customSizes": true,
+  "featured": false,
+  "order": 25,
+  "note": "",
+  "noteEn": ""
+}

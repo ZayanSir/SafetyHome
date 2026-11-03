@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Showroom from '../components/Showroom.astro';
+import site from '../data/site.json';
+import { CATEGORIES, type Lang } from '../data/categories';
+import { T, href, pick, waLink } from '../i18n';
+import { getProducts } from '../lib/products';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = T[lang];
+const all = await getProducts();
+const counts = Object.fromEntries(CATEGORIES.map((c) => [c.slug, all.filter((p) => p.data.category === c.slug).length]));
+const featured = all.filter((p) => p.data.featured);
+const armored = featured.filter((p) => p.data.category === 'armored').slice(0, 4);
+const wpc = featured.filter((p) => p.data.category === 'wpc').slice(0, 4);
+const yt = site.heroYoutubeId;
+const poster = '/hero.jpg';
+const catIcon: Record<string, string> = { room: 'door', wood: 'door', pvc: 'window' };
+---
+<Base lang={lang} title={pick(lang, site.brandAr, site.brand)} current="home">
+  <section class="hero">
+    <div class="hero-media">
+      {site.heroVideoFile ? (
+        <video src={site.heroVideoFile} poster={poster} autoplay muted loop playsinline preload="metadata"></video>
+      ) : (
+        <>
+          <img src={poster} alt="" width="1280" height="720" fetchpriority="high" />
+          <iframe
+            class="yt"
+            data-src={`https://www.youtube-nocookie.com/embed/${yt}?autoplay=1&mute=1&loop=1&playlist=${yt}&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1`}
+            title={pick(lang, 'فيديو سيفتى هوم', 'Safety Home video')}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            tabindex="-1"
+            aria-hidden="true"></iframe>
+        </>
+      )}
+    </div>
+    <div class="wrap">
+      <div class="hero-body">
+        <span class="eyebrow">{pick(lang, 'سيفتى هوم — طنطا', 'Safety Home — Tanta')}</span>
+        <h1>{pick(lang, site.heroTitleAr, site.heroTitleEn)}</h1>
+        <p>{pick(lang, site.heroTextAr, site.heroTextEn)}</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#categories">{t.browse}<Icon name="arrow" class="flip" /></a>
+          <a class="btn btn-wa" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
+        </div>
+        <div class="trust">
+          <span><Icon name="ship" />{pick(lang, 'مستورد مباشر', 'Direct importer')}</span>
+          <span><Icon name="shield" />{pick(lang, 'تركي أصلي', 'Original Turkish')}</span>
+          <span><Icon name="store" />{pick(lang, 'أكبر تشكيلة في معرض واحد', 'Wide range in one showroom')}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" id="categories" aria-labelledby="cats-title">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">{t.categories}</span>
+        <h2 id="cats-title">{pick(lang, 'كل اللي بيتك محتاجه في مكان واحد', 'Everything your home needs, in one place')}</h2>
+      </div>
+    </div>
+    <div class="cats">
+      {CATEGORIES.map((c) => (
+        <a class="cat reveal" href={href(lang, `/${c.slug}/`)}>
+          <div class:list={['img', { empty: !c.cover }]}>
+            {c.cover ? <img src={c.cover} alt="" loading="lazy" width="300" height="620" /> : <Icon name={catIcon[c.slug] ?? 'door'} />}
+          </div>
+          <div class="meta">
+            <div>
+              <b>{pick(lang, c.ar, c.en)}</b>
+              <small>{counts[c.slug] ? `${counts[c.slug]} ${t.models}` : pick(lang, 'قريبًا', 'Coming soon')}</small>
+            </div>
+            <Icon name="arrow" class="flip" />
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {[{ slug: 'armored', items: armored }, { slug: 'wpc', items: wpc }].map(({ slug, items }) => {
+    const c = CATEGORIES.find((x) => x.slug === slug)!;
+    return items.length > 0 && (
+      <section class="section wrap" style="padding-top:0" aria-labelledby={`f-${slug}`}>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">{t.featured}</span>
+            <h2 id={`f-${slug}`}>{pick(lang, c.ar, c.en)}</h2>
+            <p>{pick(lang, c.introAr, c.introEn)}</p>
+          </div>
+          <a class="link-more" href={href(lang, `/${slug}/`)}>{t.seeAll} ({counts[slug]})<Icon name="arrow" class="flip" /></a>
+        </div>
+        <div class="grid">{items.map((p) => <ProductCard p={p} lang={lang} />)}</div>
+      </section>
+    );
+  })}
+
+  <div class="wrap"><Showroom lang={lang} /></div>
+</Base>
+
+<script>
+  // Load the YouTube background only when motion is allowed, after the page settles.
+  const f = document.querySelector<HTMLIFrameElement>('.hero-media .yt');
+  if (f && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const go = () => { f.src = f.dataset.src!; f.addEventListener('load', () => setTimeout(() => f.classList.add('on'), 1200), { once: true }); };
+    if (document.readyState === 'complete') setTimeout(go, 400); else addEventListener('load', () => setTimeout(go, 400));
+  }
+</script>
