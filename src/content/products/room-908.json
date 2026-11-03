@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 908 — جوزي",
+  "titleEn": "Turkish room door code 908 — Walnut",
+  "category": "room",
+  "model": "908",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جوزي",
+      "colorNameEn": "Walnut",
+      "swatch": "/products/room-908/swatch.webp",
+      "image": "/products/room-908/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 8,
+  "note": "",
+  "noteEn": ""
+}

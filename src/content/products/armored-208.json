@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 208",
+  "titleEn": "Turkish armored door code 208",
+  "category": "armored",
+  "model": "208",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-208/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 47,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 5",
+  "titleEn": "Turkish armored door code 5",
+  "category": "armored",
+  "model": "5",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-5-2/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 83,
+  "note": "",
+  "noteEn": ""
+}

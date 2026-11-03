@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 12 — بني خشبي",
+  "titleEn": "Turkish room door code 12 — Wood brown",
+  "category": "room",
+  "model": "12",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني خشبي",
+      "colorNameEn": "Wood brown",
+      "swatch": "/products/room-12/swatch.webp",
+      "image": "/products/room-12/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 12,
+  "note": "",
+  "noteEn": ""
+}

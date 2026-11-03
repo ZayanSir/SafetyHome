@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 910 — بيج",
+  "titleEn": "Turkish room door code 910 — Beige",
+  "category": "room",
+  "model": "910",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بيج",
+      "colorNameEn": "Beige",
+      "swatch": "/products/room-910/swatch.webp",
+      "image": "/products/room-910/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 5,
+  "note": "",
+  "noteEn": ""
+}

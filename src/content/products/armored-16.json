@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 16",
+  "titleEn": "Turkish armored door code 16",
+  "category": "armored",
+  "model": "16",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-16/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 11,
+  "note": "",
+  "noteEn": ""
+}

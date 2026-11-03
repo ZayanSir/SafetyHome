@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../data/categories';
 import { T, href, fmtPrice, pick } from '../i18n';
-import { type Product, slugOf, priceOf, smallImg, isScene } from '../lib/products';
+import { type Product, slugOf, priceOf, smallImg, isScene, isPhoto, swatchOf } from '../lib/products';
 import { colorName } from '../data/colors';
 
 interface Props { p: Product; lang: Lang; eager?: boolean }
@@ -11,7 +11,8 @@ const d = p.data;
 const v0 = d.variants[0];
 const { price, old } = priceOf(p);
 const colors = d.variants.map((v) => v.color).filter(Boolean);
-const scene = isScene(p);
+const named = d.variants.length === 1 ? pick(lang, d.variants[0].colorName, d.variants[0].colorNameEn) : '';
+const scene = isScene(p) || isPhoto(p);
 const name = pick(lang, d.title, d.titleEn);
 const hasSizes = (d.sizes ?? []).some((s) => s.price);
 ---
@@ -40,9 +41,12 @@ const hasSizes = (d.sizes ?? []).some((s) => s.price);
       ) : (
         <span class="price ask">{t.askPrice}</span>
       )}
+      {named && (
+        <span class="dots"><i style={`background-image:url(${swatchOf(d.variants[0])})`} /><small>{named}</small></span>
+      )}
       {colors.length > 1 && (
         <span class="dots" aria-label={colors.map((c) => colorName(c, lang)).join('، ')}>
-          {colors.slice(0, 4).map((c) => <i style={`background-image:url(/swatches/${c}.webp)`} />)}
+          {d.variants.filter((v) => v.color).slice(0, 4).map((v) => <i style={`background-image:url(${swatchOf(v)})`} />)}
           {colors.length > 4 && <small>+{colors.length - 4}</small>}
         </span>
       )}

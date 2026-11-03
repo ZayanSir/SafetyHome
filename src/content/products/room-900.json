@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 900 — بني",
+  "titleEn": "Turkish room door code 900 — Brown",
+  "category": "room",
+  "model": "900",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني",
+      "colorNameEn": "Brown",
+      "swatch": "/products/room-900/swatch.webp",
+      "image": "/products/room-900/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 21,
+  "note": "",
+  "noteEn": ""
+}

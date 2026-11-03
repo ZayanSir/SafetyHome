@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 301 — بيج خشبي",
+  "titleEn": "Turkish room door code 301 — Wood beige",
+  "category": "room",
+  "model": "301",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بيج خشبي",
+      "colorNameEn": "Wood beige",
+      "swatch": "/products/room-301/swatch.webp",
+      "image": "/products/room-301/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 3,
+  "note": "",
+  "noteEn": ""
+}

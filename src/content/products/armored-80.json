@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 80",
+  "titleEn": "Turkish armored door code 80",
+  "category": "armored",
+  "model": "80",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-80/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 16,
+  "note": "",
+  "noteEn": ""
+}

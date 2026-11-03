@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 602 — جوزي",
+  "titleEn": "Turkish room door code 602 — Walnut",
+  "category": "room",
+  "model": "602",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جوزي",
+      "colorNameEn": "Walnut",
+      "swatch": "/products/room-602/swatch.webp",
+      "image": "/products/room-602/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 9,
+  "note": "",
+  "noteEn": ""
+}

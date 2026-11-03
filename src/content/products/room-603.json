@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 603 — جراي",
+  "titleEn": "Turkish room door code 603 — Grey",
+  "category": "room",
+  "model": "603",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي",
+      "colorNameEn": "Grey",
+      "swatch": "/products/room-603/swatch.webp",
+      "image": "/products/room-603/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 2,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 604 — بيج",
+  "titleEn": "Turkish room door code 604 — Beige",
+  "category": "room",
+  "model": "604",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بيج",
+      "colorNameEn": "Beige",
+      "swatch": "/products/room-604-2/swatch.webp",
+      "image": "/products/room-604-2/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 13,
+  "note": "",
+  "noteEn": ""
+}

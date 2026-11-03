@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 15 — جراي",
+  "titleEn": "Turkish room door code 15 — Grey",
+  "category": "room",
+  "model": "15",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي",
+      "colorNameEn": "Grey",
+      "swatch": "/products/room-15/swatch.webp",
+      "image": "/products/room-15/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 16,
+  "note": "",
+  "noteEn": ""
+}

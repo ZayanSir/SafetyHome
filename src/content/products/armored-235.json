@@ -3,8 +3,8 @@
   "titleEn": "Turkish armored door code 235",
   "category": "armored",
   "model": "235",
-  "line": "مصفح تركي",
-  "lineEn": "Turkish armored",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
   "variants": [
     {
       "color": "",
@@ -14,7 +14,7 @@
   "sizes": [],
   "customSizes": true,
   "featured": false,
-  "order": 21,
+  "order": 25,
   "note": "",
   "noteEn": ""
 }

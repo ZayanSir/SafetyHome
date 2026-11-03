@@ -25,8 +25,10 @@ content:
         options:
           values:
             - { value: armored, label: أبواب مصفحة تركي }
+            - { value: room, label: أبواب غرف تركي }
             - { value: wpc, label: أبواب WPC }
-            - { value: room, label: أبواب غرف جاهزة }
+            - { value: spc, label: أرضيات SPC }
+            - { value: floors, label: أرضيات }
             - { value: wood, label: أبواب خشب }
             - { value: pvc, label: شبابيك PVC }
       - { name: model, label: الكود / الموديل, type: string, required: true, description: 'مثلا D114 أو 306' }
@@ -39,7 +41,11 @@ content:
         description: 'أول صورة هي اللي بتظهر في الكارت'
         fields:
           - { name: color, label: كود اللون, type: string, description: 'زي C182 — سيبه فاضي لو الباب لون واحد' }
+          - { name: colorName, label: اسم اللون بالعربي, type: string }
+          - { name: colorNameEn, label: اسم اللون بالإنجليزي, type: string }
+          - { name: swatch, label: صورة اللون الصغيرة, type: image }
           - { name: image, label: الصورة, type: image, required: true }
+      - { name: gallery, label: صور إضافية, type: image, list: true }
       - name: sizes
         label: المقاسات والأسعار
         type: object

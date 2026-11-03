@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 179",
+  "titleEn": "Turkish armored door code 179",
+  "category": "armored",
+  "model": "179",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-179/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 20,
+  "note": "",
+  "noteEn": ""
+}

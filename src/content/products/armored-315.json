@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 315",
+  "titleEn": "Turkish armored door code 315",
+  "category": "armored",
+  "model": "315",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-315/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 70,
+  "note": "",
+  "noteEn": ""
+}

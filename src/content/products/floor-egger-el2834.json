@@ -1,0 +1,23 @@
+{
+  "title": "أرضية EGGER Murom Oak",
+  "titleEn": "EGGER flooring Murom Oak",
+  "category": "floors",
+  "model": "EL2834",
+  "line": "EGGER",
+  "lineEn": "EGGER",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-egger-el2834/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/floor-egger-el2834/board.webp"
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": false,
+  "order": 109,
+  "note": "",
+  "noteEn": ""
+}

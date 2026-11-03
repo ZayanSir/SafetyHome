@@ -3,8 +3,8 @@
   "titleEn": "Turkish armored door code 101",
   "category": "armored",
   "model": "101",
-  "line": "مصفح تركي",
-  "lineEn": "Turkish armored",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
   "variants": [
     {
       "color": "",
@@ -13,8 +13,8 @@
   ],
   "sizes": [],
   "customSizes": true,
-  "featured": true,
-  "order": 1,
+  "featured": false,
+  "order": 55,
   "note": "",
   "noteEn": ""
 }

@@ -22,3 +22,6 @@ export function priceOf(p: Product): { price: number | null; old: number | null 
 export const smallImg = (src: string) => src.replace(/\.webp$/, '-sm.webp');
 /** 3D / lifestyle shots fill the frame instead of floating on the backdrop */
 export const isScene = (p: Product) => p.data.category === 'wpc' && /^D8\d$/.test(p.data.model);
+/** Catalog photos (showroom scenes, floor boards) shown edge to edge */
+export const isPhoto = (p: Product) => ['armored', 'spc', 'floors'].includes(p.data.category);
+export const swatchOf = (v: { color?: string; swatch?: string }) => v.swatch || (v.color ? `/swatches/${v.color}.webp` : '');

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 117",
+  "titleEn": "Turkish armored door code 117",
+  "category": "armored",
+  "model": "117",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-117/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 38,
+  "note": "",
+  "noteEn": ""
+}

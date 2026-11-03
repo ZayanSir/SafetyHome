@@ -1,0 +1,20 @@
+{
+  "title": "أرضية Ruby",
+  "titleEn": "Ruby flooring",
+  "category": "floors",
+  "model": "DM-301-PL",
+  "line": "Area Floors",
+  "lineEn": "Area Floors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-dm-301-pl/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": true,
+  "order": 4,
+  "note": "",
+  "noteEn": ""
+}

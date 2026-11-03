@@ -1,0 +1,23 @@
+{
+  "title": "أرضية EGGER Bardolino Oak",
+  "titleEn": "EGGER flooring Bardolino Oak",
+  "category": "floors",
+  "model": "PL1055",
+  "line": "EGGER",
+  "lineEn": "EGGER",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-egger-pl1055/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/floor-egger-pl1055/board.webp"
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": true,
+  "order": 101,
+  "note": "",
+  "noteEn": ""
+}

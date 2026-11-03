@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 13 — جوزي فاتح",
+  "titleEn": "Turkish room door code 13 — Light walnut",
+  "category": "room",
+  "model": "13",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جوزي فاتح",
+      "colorNameEn": "Light walnut",
+      "swatch": "/products/room-13/swatch.webp",
+      "image": "/products/room-13/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 14,
+  "note": "",
+  "noteEn": ""
+}

@@ -8,13 +8,20 @@ const products = defineCollection({
   schema: z.object({
     title: z.string(),
     titleEn: z.string().optional().default(''),
-    category: z.enum(['armored', 'wpc', 'room', 'wood', 'pvc']),
+    category: z.enum(['armored', 'room', 'wpc', 'spc', 'floors', 'wood', 'pvc']),
     model: z.string(),
     line: z.string().optional().default(''),
     lineEn: z.string().optional().default(''),
     variants: z
-      .array(z.object({ color: z.string().optional().default(''), image: z.string() }))
+      .array(z.object({
+        color: z.string().optional().default(''),
+        colorName: z.string().optional().default(''),
+        colorNameEn: z.string().optional().default(''),
+        swatch: z.string().optional().default(''),
+        image: z.string(),
+      }))
       .min(1),
+    gallery: z.array(z.string()).optional().default([]),
     sizes: z
       .array(z.object({ width: z.number(), height: z.number(), price: num, oldPrice: num }))
       .optional()

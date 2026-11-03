@@ -339,3 +339,9 @@ h2.sub { font-size: 20px; margin-bottom: 12px; }
   .hero-media .yt { display: none; }
 }
 .card[hidden] { display: none; }
+
+/* catalog photos: showroom scenes, floor rooms — show the whole photo */
+.pd-stage.photo { aspect-ratio: auto; padding: 0; background: var(--paper); }
+.pd-stage.photo img { position: static; inset: auto; width: 100%; height: auto; max-height: 78vh; object-fit: contain; filter: none; margin-inline: auto; }
+.cats { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+@media (max-width: 640px) { .cats { grid-template-columns: repeat(2, 1fr); } }

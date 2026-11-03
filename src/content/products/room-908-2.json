@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 908 — بني",
+  "titleEn": "Turkish room door code 908 — Brown",
+  "category": "room",
+  "model": "908",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني",
+      "colorNameEn": "Brown",
+      "swatch": "/products/room-908-2/swatch.webp",
+      "image": "/products/room-908-2/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 22,
+  "note": "",
+  "noteEn": ""
+}

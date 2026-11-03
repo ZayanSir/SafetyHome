@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 905 — جراي فاتح",
+  "titleEn": "Turkish room door code 905 — Light grey",
+  "category": "room",
+  "model": "905",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي فاتح",
+      "colorNameEn": "Light grey",
+      "swatch": "/products/room-905/swatch.webp",
+      "image": "/products/room-905/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 18,
+  "note": "",
+  "noteEn": ""
+}

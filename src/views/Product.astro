@@ -5,7 +5,7 @@ import ProductCard from '../components/ProductCard.astro';
 import site from '../data/site.json';
 import { type Lang, catBySlug } from '../data/categories';
 import { T, href, pick, fmtPrice } from '../i18n';
-import { type Product, getProducts, slugOf, isScene, priceOf } from '../lib/products';
+import { type Product, getProducts, slugOf, isScene, isPhoto, priceOf, swatchOf } from '../lib/products';
 import { colorName } from '../data/colors';
 interface Props { lang: Lang; p: Product }
 const { lang, p } = Astro.props;
@@ -14,6 +14,10 @@ const d = p.data;
 const c = catBySlug(d.category);
 const name = pick(lang, d.title, d.titleEn);
 const scene = isScene(p);
+const photo = isPhoto(p);
+const cname = (v: (typeof d.variants)[number]) => pick(lang, v.colorName, v.colorNameEn) || colorName(v.color, lang);
+const gallery = d.gallery ?? [];
+const shots = [...d.variants.map((v) => v.image), ...gallery];
 const sizes = d.sizes ?? [];
 const firstPriced = Math.max(0, sizes.findIndex((s) => s.price));
 const { price, old } = priceOf(p);
@@ -63,14 +67,14 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
     data-msg={JSON.stringify(msgBase)}
   >
     <div class="pd-media">
-      <div class:list={['pd-stage', { full: scene }]}>
+      <div class:list={['pd-stage', { full: scene, photo }]}>
         <img id="pd-img" src={d.variants[0].image} alt={`${name} ${d.variants[0].color}`} width="520" height="1100" fetchpriority="high" />
       </div>
-      {d.variants.length > 1 && (
+      {shots.length > 1 && (
         <div class="pd-thumbs" aria-hidden="true">
-          {d.variants.map((v, i) => (
-            <button type="button" tabindex="-1" aria-pressed={i === 0 ? 'true' : 'false'} data-i={i}>
-              <img src={v.image.replace(/\.webp$/, '-sm.webp')} alt="" loading="lazy" width="60" height="76" />
+          {shots.map((src, i) => (
+            <button type="button" tabindex="-1" aria-pressed={i === 0 ? 'true' : 'false'} data-i={i} data-src={src}>
+              <img src={src.replace(/\.webp$/, '-sm.webp')} alt="" loading="lazy" width="60" height="76" />
             </button>
           ))}
         </div>
@@ -84,6 +88,7 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
         <div class="pd-code">
           <span>{t.code}: <b id="pd-code">{d.model}{d.variants[0].color ? `-${d.variants[0].color}` : ''}</b></span>
           {d.variants.length > 1 && <span>{d.variants.length} {pick(lang, 'لون', 'colors')}</span>}
+          {d.variants.length === 1 && cname(d.variants[0]) && d.variants[0].colorName && <span>{t.color}: {cname(d.variants[0])}</span>}
         </div>
       </div>
 
@@ -104,12 +109,12 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
 
       {d.variants.length > 1 && (
         <fieldset>
-          <legend>{t.color}: <span id="pd-color-name">{colorName(d.variants[0].color, lang)} · {d.variants[0].color}</span></legend>
+          <legend>{t.color}: <span id="pd-color-name">{cname(d.variants[0])} · {d.variants[0].color}</span></legend>
           <div class="swatches">
             {d.variants.map((v, i) => (
-              <label title={`${colorName(v.color, lang)} · ${v.color}`}>
-                <input type="radio" name="color" value={i} checked={i === 0} data-img={v.image} data-color={v.color} data-cname={colorName(v.color, lang)} aria-label={`${colorName(v.color, lang)} ${v.color}`} />
-                <i style={`background-image:url(/swatches/${v.color}.webp)`}></i>
+              <label title={`${cname(v)} · ${v.color}`}>
+                <input type="radio" name="color" value={i} checked={i === 0} data-img={v.image} data-color={v.color} data-cname={cname(v)} aria-label={`${cname(v)} ${v.color}`} />
+                <i style={`background-image:url(${swatchOf(v)})`}></i>
               </label>
             ))}
           </div>
@@ -130,7 +135,7 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
           {d.customSizes && <p class="hint"><Icon name="ruler" />{t.customSize}</p>}
         </fieldset>
       ) : (
-        <p class="hint" style="margin:0"><Icon name="ruler" />{t.measureOnSite}</p>
+        <p class="hint" style="margin:0"><Icon name="ruler" />{['spc', 'floors'].includes(d.category) ? t.areaHint : t.measureOnSite}</p>
       )}
 
       <div class="pd-cta">
@@ -225,7 +230,17 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
     update();
   };
   colorRadios.forEach((r, i) => r.addEventListener('change', () => setColor(i)));
-  thumbs.forEach((t, i) => t.addEventListener('click', () => setColor(i)));
+  const show = (src: string) => {
+    if (img.getAttribute('src') === src) return;
+    img.classList.add('swap');
+    const pre = new Image(); pre.src = src;
+    pre.onload = () => { img.src = pre.src; requestAnimationFrame(() => img.classList.remove('swap')); };
+  };
+  thumbs.forEach((t, i) => t.addEventListener('click', () => {
+    if (i < colorRadios.length) { setColor(i); return; }
+    thumbs.forEach((x, k) => x.setAttribute('aria-pressed', String(k === i)));
+    show(t.dataset.src!);
+  }));
   sizeRadios.forEach((r) => r.addEventListener('change', update));
   update();
 

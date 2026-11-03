@@ -1,0 +1,20 @@
+{
+  "title": "أرضية SPC باركوود",
+  "titleEn": "SPC flooring Barkwood",
+  "category": "spc",
+  "model": "Barkwood",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/spc-barkwood/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": true,
+  "order": 1,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 91",
+  "titleEn": "Turkish armored door code 91",
+  "category": "armored",
+  "model": "91",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-91/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 31,
+  "note": "",
+  "noteEn": ""
+}

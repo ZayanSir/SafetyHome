@@ -1,0 +1,20 @@
+{
+  "title": "أرضية Scraped Oak",
+  "titleEn": "Scraped Oak flooring",
+  "category": "floors",
+  "model": "WD-209-PL",
+  "line": "Area Floors",
+  "lineEn": "Area Floors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-wd-209-pl/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": false,
+  "order": 12,
+  "note": "",
+  "noteEn": ""
+}

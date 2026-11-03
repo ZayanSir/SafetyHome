@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 604 — جراي",
+  "titleEn": "Turkish room door code 604 — Grey",
+  "category": "room",
+  "model": "604",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي",
+      "colorNameEn": "Grey",
+      "swatch": "/products/room-604/swatch.webp",
+      "image": "/products/room-604/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 1,
+  "note": "",
+  "noteEn": ""
+}

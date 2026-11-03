@@ -1,0 +1,20 @@
+{
+  "title": "أرضية SPC ديزرت",
+  "titleEn": "SPC flooring Desert",
+  "category": "spc",
+  "model": "Desert",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/spc-desert/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": true,
+  "order": 3,
+  "note": "",
+  "noteEn": ""
+}

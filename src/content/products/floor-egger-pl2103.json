@@ -1,0 +1,23 @@
+{
+  "title": "أرضية EGGER Dark Dunnington Oak",
+  "titleEn": "EGGER flooring Dark Dunnington Oak",
+  "category": "floors",
+  "model": "PL2103",
+  "line": "EGGER",
+  "lineEn": "EGGER",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-egger-pl2103/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/floor-egger-pl2103/board.webp"
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": false,
+  "order": 103,
+  "note": "",
+  "noteEn": ""
+}

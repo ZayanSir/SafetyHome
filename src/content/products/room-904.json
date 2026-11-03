@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 904 — جريش",
+  "titleEn": "Turkish room door code 904 — Greige",
+  "category": "room",
+  "model": "904",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جريش",
+      "colorNameEn": "Greige",
+      "swatch": "/products/room-904/swatch.webp",
+      "image": "/products/room-904/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 7,
+  "note": "",
+  "noteEn": ""
+}

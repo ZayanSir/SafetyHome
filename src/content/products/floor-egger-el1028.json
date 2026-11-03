@@ -1,0 +1,23 @@
+{
+  "title": "أرضية EGGER Grey Avery Oak",
+  "titleEn": "EGGER flooring Grey Avery Oak",
+  "category": "floors",
+  "model": "EL1028",
+  "line": "EGGER",
+  "lineEn": "EGGER",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-egger-el1028/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/floor-egger-el1028/board.webp"
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": true,
+  "order": 100,
+  "note": "",
+  "noteEn": ""
+}

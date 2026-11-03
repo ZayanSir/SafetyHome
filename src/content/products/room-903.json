@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 903 — بيج",
+  "titleEn": "Turkish room door code 903 — Beige",
+  "category": "room",
+  "model": "903",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بيج",
+      "colorNameEn": "Beige",
+      "swatch": "/products/room-903/swatch.webp",
+      "image": "/products/room-903/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 20,
+  "note": "",
+  "noteEn": ""
+}

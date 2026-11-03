@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 14 — جراي فاتح",
+  "titleEn": "Turkish room door code 14 — Light grey",
+  "category": "room",
+  "model": "14",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي فاتح",
+      "colorNameEn": "Light grey",
+      "swatch": "/products/room-14/swatch.webp",
+      "image": "/products/room-14/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 15,
+  "note": "",
+  "noteEn": ""
+}

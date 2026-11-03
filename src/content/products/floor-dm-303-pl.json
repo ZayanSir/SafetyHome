@@ -1,0 +1,20 @@
+{
+  "title": "أرضية Excelsior",
+  "titleEn": "Excelsior flooring",
+  "category": "floors",
+  "model": "DM-303-PL",
+  "line": "Area Floors",
+  "lineEn": "Area Floors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/floor-dm-303-pl/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": false,
+  "featured": false,
+  "order": 5,
+  "note": "",
+  "noteEn": ""
+}

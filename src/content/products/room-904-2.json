@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 904 — بني خشبي",
+  "titleEn": "Turkish room door code 904 — Wood brown",
+  "category": "room",
+  "model": "904",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني خشبي",
+      "colorNameEn": "Wood brown",
+      "swatch": "/products/room-904-2/swatch.webp",
+      "image": "/products/room-904-2/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 10,
+  "note": "",
+  "noteEn": ""
+}

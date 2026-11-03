@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 901 — بني جوزي فاتح",
+  "titleEn": "Turkish room door code 901 — Light walnut brown",
+  "category": "room",
+  "model": "901",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني جوزي فاتح",
+      "colorNameEn": "Light walnut brown",
+      "swatch": "/products/room-901/swatch.webp",
+      "image": "/products/room-901/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 6,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 357",
+  "titleEn": "Turkish armored door code 357",
+  "category": "armored",
+  "model": "357",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-357/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 68,
+  "note": "",
+  "noteEn": ""
+}

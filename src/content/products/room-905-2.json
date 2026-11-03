@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 905 — بني",
+  "titleEn": "Turkish room door code 905 — Brown",
+  "category": "room",
+  "model": "905",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "بني",
+      "colorNameEn": "Brown",
+      "swatch": "/products/room-905-2/swatch.webp",
+      "image": "/products/room-905-2/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 23,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي كود 234",
+  "titleEn": "Turkish armored door code 234",
+  "category": "armored",
+  "model": "234",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-234/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 50,
+  "note": "",
+  "noteEn": ""
+}

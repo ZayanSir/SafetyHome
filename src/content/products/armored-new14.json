@@ -1,0 +1,20 @@
+{
+  "title": "باب مصفح تركي (بدون كود)",
+  "titleEn": "Turkish armored door (no code)",
+  "category": "armored",
+  "model": "بدون كود",
+  "line": "تصفيح تركي بالكامل",
+  "lineEn": "Fully Turkish armored",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/armored-new14/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 14,
+  "note": "",
+  "noteEn": ""
+}

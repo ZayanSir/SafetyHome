@@ -1,0 +1,23 @@
+{
+  "title": "باب غرفة تركي كود 16 — جراي",
+  "titleEn": "Turkish room door code 16 — Grey",
+  "category": "room",
+  "model": "16",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "colorName": "جراي",
+      "colorNameEn": "Grey",
+      "swatch": "/products/room-16/swatch.webp",
+      "image": "/products/room-16/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 17,
+  "note": "",
+  "noteEn": ""
+}
