@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-05",
+  "titleEn": "PVC door model P-05",
+  "category": "pvc",
+  "model": "P-05",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p05/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 5,
+  "note": "",
+  "noteEn": ""
+}

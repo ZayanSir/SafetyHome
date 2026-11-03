@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-05",
+  "titleEn": "Wooden door model W-05",
+  "category": "wood",
+  "model": "W-05",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w05/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 5,
+  "note": "",
+  "noteEn": ""
+}

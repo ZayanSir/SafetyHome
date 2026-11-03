@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-10",
+  "titleEn": "PVC door model P-10",
+  "category": "pvc",
+  "model": "P-10",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p10/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 10,
+  "note": "",
+  "noteEn": ""
+}

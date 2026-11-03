@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-03",
+  "titleEn": "Wooden door model W-03",
+  "category": "wood",
+  "model": "W-03",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w03/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 3,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-04",
+  "titleEn": "Wooden door model W-04",
+  "category": "wood",
+  "model": "W-04",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w04/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 4,
+  "note": "",
+  "noteEn": ""
+}

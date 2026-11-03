@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-08",
+  "titleEn": "PVC door model P-08",
+  "category": "pvc",
+  "model": "P-08",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p08/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 8,
+  "note": "",
+  "noteEn": ""
+}

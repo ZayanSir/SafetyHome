@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-06",
+  "titleEn": "Wooden door model W-06",
+  "category": "wood",
+  "model": "W-06",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w06/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 6,
+  "note": "",
+  "noteEn": ""
+}

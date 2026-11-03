@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-18",
+  "titleEn": "Wooden door model W-18",
+  "category": "wood",
+  "model": "W-18",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w18/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 18,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-06",
+  "titleEn": "PVC door model P-06",
+  "category": "pvc",
+  "model": "P-06",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p06/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 6,
+  "note": "",
+  "noteEn": ""
+}

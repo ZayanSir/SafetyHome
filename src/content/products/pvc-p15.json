@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-15",
+  "titleEn": "PVC window model P-15",
+  "category": "pvc",
+  "model": "P-15",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p15/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 15,
+  "note": "",
+  "noteEn": ""
+}

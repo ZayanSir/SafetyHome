@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-11",
+  "titleEn": "Wooden door model W-11",
+  "category": "wood",
+  "model": "W-11",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w11/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 11,
+  "note": "",
+  "noteEn": ""
+}

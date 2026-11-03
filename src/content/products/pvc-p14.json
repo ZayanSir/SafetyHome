@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-14",
+  "titleEn": "PVC window model P-14",
+  "category": "pvc",
+  "model": "P-14",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p14/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "order": 14,
+  "note": "",
+  "noteEn": ""
+}

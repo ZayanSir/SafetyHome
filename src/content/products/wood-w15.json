@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-15",
+  "titleEn": "Wooden door model W-15",
+  "category": "wood",
+  "model": "W-15",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w15/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 15,
+  "note": "",
+  "noteEn": ""
+}

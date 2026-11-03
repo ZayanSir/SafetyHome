@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-20",
+  "titleEn": "PVC window model P-20",
+  "category": "pvc",
+  "model": "P-20",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p20/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 20,
+  "note": "",
+  "noteEn": ""
+}

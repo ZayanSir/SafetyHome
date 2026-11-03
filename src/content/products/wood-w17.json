@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-17",
+  "titleEn": "Wooden door model W-17",
+  "category": "wood",
+  "model": "W-17",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w17/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 17,
+  "note": "",
+  "noteEn": ""
+}

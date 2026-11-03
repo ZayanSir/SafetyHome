@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-19",
+  "titleEn": "Wooden door model W-19",
+  "category": "wood",
+  "model": "W-19",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w19/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 19,
+  "note": "",
+  "noteEn": ""
+}

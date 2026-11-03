@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-07",
+  "titleEn": "Wooden door model W-07",
+  "category": "wood",
+  "model": "W-07",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w07/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 7,
+  "note": "",
+  "noteEn": ""
+}

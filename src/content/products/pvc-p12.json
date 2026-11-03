@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-12",
+  "titleEn": "PVC door model P-12",
+  "category": "pvc",
+  "model": "P-12",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p12/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 12,
+  "note": "",
+  "noteEn": ""
+}

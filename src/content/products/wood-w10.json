@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-10",
+  "titleEn": "Wooden door model W-10",
+  "category": "wood",
+  "model": "W-10",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w10/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 10,
+  "note": "",
+  "noteEn": ""
+}

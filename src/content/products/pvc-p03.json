@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-03",
+  "titleEn": "PVC door model P-03",
+  "category": "pvc",
+  "model": "P-03",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p03/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 3,
+  "note": "",
+  "noteEn": ""
+}

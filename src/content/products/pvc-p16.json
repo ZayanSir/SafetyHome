@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-16",
+  "titleEn": "PVC window model P-16",
+  "category": "pvc",
+  "model": "P-16",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p16/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 16,
+  "note": "",
+  "noteEn": ""
+}

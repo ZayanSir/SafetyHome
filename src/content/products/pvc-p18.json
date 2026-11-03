@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-18",
+  "titleEn": "PVC window model P-18",
+  "category": "pvc",
+  "model": "P-18",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p18/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 18,
+  "note": "",
+  "noteEn": ""
+}

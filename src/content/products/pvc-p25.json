@@ -1,0 +1,20 @@
+{
+  "title": "شباك PVC موديل P-25",
+  "titleEn": "PVC window model P-25",
+  "category": "pvc",
+  "model": "P-25",
+  "line": "شبابيك",
+  "lineEn": "Windows",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p25/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 25,
+  "note": "",
+  "noteEn": ""
+}

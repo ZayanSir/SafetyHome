@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-09",
+  "titleEn": "PVC door model P-09",
+  "category": "pvc",
+  "model": "P-09",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p09/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 9,
+  "note": "",
+  "noteEn": ""
+}

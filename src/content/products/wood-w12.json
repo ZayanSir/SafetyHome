@@ -1,0 +1,20 @@
+{
+  "title": "باب خشب موديل W-12",
+  "titleEn": "Wooden door model W-12",
+  "category": "wood",
+  "model": "W-12",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/wood-w12/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 12,
+  "note": "",
+  "noteEn": ""
+}

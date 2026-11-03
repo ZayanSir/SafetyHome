@@ -1,0 +1,20 @@
+{
+  "title": "باب PVC موديل P-04",
+  "titleEn": "PVC door model P-04",
+  "category": "pvc",
+  "model": "P-04",
+  "line": "أبواب",
+  "lineEn": "Doors",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/pvc-p04/main.webp"
+    }
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "order": 4,
+  "note": "",
+  "noteEn": ""
+}
