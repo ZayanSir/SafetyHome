@@ -61,7 +61,7 @@ const catIcon: Record<string, string> = { room: 'door', wood: 'door', pvc: 'wind
       </div>
     </div>
     <div class="cats">
-      {CATEGORIES.map((c) => (
+      {CATEGORIES.filter((c) => counts[c.slug] > 0).map((c) => (
         <a class="cat reveal" href={href(lang, `/${c.slug}/`)}>
           <div class:list={['img', { empty: !c.cover }]}>
             {c.cover ? <img src={c.cover} alt="" loading="lazy" width="300" height="620" /> : <Icon name={catIcon[c.slug] ?? 'door'} />}

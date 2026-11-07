@@ -3,6 +3,7 @@ import '../styles/global.css';
 import site from '../data/site.json';
 import { CATEGORIES, type Lang } from '../data/categories';
 import { T, href, otherPath, waLink, pick } from '../i18n';
+import { getProducts } from '../lib/products';
 import Icon from '../components/Icon.astro';
 
 interface Props {
@@ -15,6 +16,9 @@ interface Props {
 }
 const { lang, title, description = pick(lang, site.heroTextAr, site.heroTextEn), image = '/og.jpg', current, jsonld = [] } = Astro.props;
 const t = T[lang];
+// Sections with no products yet stay out of the menus until something is added
+const filled = new Set((await getProducts()).map((p) => p.data.category));
+const CATS = CATEGORIES.filter((c) => filled.has(c.slug));
 const path = Astro.url.pathname;
 const arPath = lang === 'ar' ? path : otherPath('en', path);
 const enPath = lang === 'en' ? path : otherPath('ar', path);
@@ -85,7 +89,7 @@ const org = {
         </a>
         <nav class="sh-nav" aria-label={t.menu}>
           <a href={href(lang, '/')} aria-current={current === 'home' ? 'page' : undefined}>{t.home}</a>
-          {CATEGORIES.slice(0, 3).map((c) => (
+          {CATS.slice(0, 3).map((c) => (
             <a href={href(lang, `/${c.slug}/`)} aria-current={path.includes(`/${c.slug}/`) ? 'page' : undefined}>{pick(lang, c.shortAr, c.shortEn)}</a>
           ))}
           <a href={href(lang, '/#categories')}>{pick(lang, 'كل الأقسام', 'All categories')}</a>
@@ -112,7 +116,7 @@ const org = {
         </div>
         <nav aria-label={t.menu}>
           <a href={href(lang, '/')}>{t.home}<Icon name="chevron" class="flip" /></a>
-          {CATEGORIES.map((c) => <a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}<Icon name="chevron" class="flip" /></a>)}
+          {CATS.map((c) => <a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}<Icon name="chevron" class="flip" /></a>)}
           <a href={href(lang, '/showroom/')}>{t.contact}<Icon name="chevron" class="flip" /></a>
         </nav>
         <a class="btn btn-wa btn-block" data-wa href={waLink(t.waGeneric)} target="_blank" rel="noopener"><Icon name="whatsapp" />{t.askWa}</a>
@@ -143,7 +147,7 @@ const org = {
         </div>
         <div>
           <h3>{t.products}</h3>
-          <ul>{CATEGORIES.map((c) => <li><a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}</a></li>)}</ul>
+          <ul>{CATS.map((c) => <li><a href={href(lang, `/${c.slug}/`)}>{pick(lang, c.ar, c.en)}</a></li>)}</ul>
         </div>
         <div>
           <h3>{t.showroom}</h3>
