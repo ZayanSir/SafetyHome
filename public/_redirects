@@ -1,0 +1,4 @@
+/spc/ /floors/ 301
+/spc/:slug/ /floors/:slug/ 301
+/en/spc/ /en/floors/ 301
+/en/spc/:slug/ /en/floors/:slug/ 301

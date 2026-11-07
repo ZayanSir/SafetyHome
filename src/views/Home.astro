@@ -13,10 +13,10 @@ const t = T[lang];
 const all = await getProducts();
 const counts = Object.fromEntries(CATEGORIES.map((c) => [c.slug, all.filter((p) => p.data.category === c.slug).length]));
 const featured = all.filter((p) => p.data.featured);
-const rows = ['armored', 'room', 'wpc', 'wood', 'pvc', 'spc', 'floors'].map((slug) => ({ slug, items: featured.filter((p) => p.data.category === slug).slice(0, 4) }));
+const rows = ['armored', 'room', 'wpc', 'wood', 'pvc', 'kitchens', 'dressing', 'floors'].map((slug) => ({ slug, items: featured.filter((p) => p.data.category === slug).slice(0, 4) }));
 const yt = site.heroYoutubeId;
 const poster = '/hero.jpg';
-const catIcon: Record<string, string> = { room: 'door', wood: 'door', pvc: 'window', spc: 'window', floors: 'window' };
+const catIcon: Record<string, string> = { room: 'door', wood: 'door', pvc: 'window', kitchens: 'store', dressing: 'door', floors: 'window' };
 ---
 <Base lang={lang} title={pick(lang, site.brandAr, site.brand)} current="home">
   <section class="hero">

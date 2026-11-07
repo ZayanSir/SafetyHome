@@ -8,7 +8,7 @@ const products = defineCollection({
   schema: z.object({
     title: z.string(),
     titleEn: z.string().optional().default(''),
-    category: z.enum(['armored', 'room', 'wpc', 'spc', 'floors', 'wood', 'pvc']),
+    category: z.enum(['armored', 'room', 'wpc', 'wood', 'pvc', 'kitchens', 'dressing', 'floors']),
     model: z.string(),
     line: z.string().optional().default(''),
     lineEn: z.string().optional().default(''),

@@ -27,7 +27,8 @@ content:
             - { value: armored, label: أبواب مصفحة تركي }
             - { value: room, label: أبواب غرف تركي }
             - { value: wpc, label: أبواب WPC }
-            - { value: spc, label: أرضيات SPC }
+            - { value: kitchens, label: مطابخ }
+            - { value: dressing, label: دريسنج روم }
             - { value: floors, label: أرضيات }
             - { value: wood, label: أبواب خشب }
             - { value: pvc, label: شبابيك PVC }

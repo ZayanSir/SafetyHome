@@ -1,10 +1,10 @@
 {
   "title": "أرضية SPC والنت",
   "titleEn": "SPC flooring Walnut",
-  "category": "spc",
+  "category": "floors",
   "model": "Walnut",
-  "line": "",
-  "lineEn": "",
+  "line": "SPC",
+  "lineEn": "SPC",
   "variants": [
     {
       "color": "",
@@ -14,7 +14,7 @@
   "sizes": [],
   "customSizes": false,
   "featured": false,
-  "order": 8,
-  "note": "",
-  "noteEn": ""
+  "order": 58,
+  "note": "مقاس اللوح 182 × 1220 مم، سمك 10 مم، والكرتونة فيها 2.22 م². إنتاج الخليل.",
+  "noteEn": "Plank 182 × 1220 mm, 10 mm thick, 2.22 m² per box. By Elkhalil."
 }
