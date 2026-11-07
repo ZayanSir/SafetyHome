@@ -1,0 +1,22 @@
+{
+  "title": "دريسنج روم موديل DR-04",
+  "titleEn": "Dressing room model DR-04",
+  "category": "dressing",
+  "model": "DR-04",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/dressing-dr-04/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 4,
+  "note": "",
+  "noteEn": ""
+}

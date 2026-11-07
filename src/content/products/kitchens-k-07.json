@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-07",
+  "titleEn": "Kitchen model K-07",
+  "category": "kitchens",
+  "model": "K-07",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-07/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "hidden": false,
+  "order": 7,
+  "note": "",
+  "noteEn": ""
+}

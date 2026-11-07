@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-11",
+  "titleEn": "Kitchen model K-11",
+  "category": "kitchens",
+  "model": "K-11",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-11/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "hidden": false,
+  "order": 11,
+  "note": "",
+  "noteEn": ""
+}

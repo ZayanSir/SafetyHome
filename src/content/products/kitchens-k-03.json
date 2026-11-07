@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-03",
+  "titleEn": "Kitchen model K-03",
+  "category": "kitchens",
+  "model": "K-03",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-03/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 3,
+  "note": "",
+  "noteEn": ""
+}

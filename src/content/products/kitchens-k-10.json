@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-10",
+  "titleEn": "Kitchen model K-10",
+  "category": "kitchens",
+  "model": "K-10",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-10/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "hidden": false,
+  "order": 10,
+  "note": "",
+  "noteEn": ""
+}

@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-04",
+  "titleEn": "Kitchen model K-04",
+  "category": "kitchens",
+  "model": "K-04",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-04/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 4,
+  "note": "",
+  "noteEn": ""
+}

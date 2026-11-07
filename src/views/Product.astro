@@ -135,7 +135,7 @@ const sizeLabel = (s: { width: number; height: number }) => `${s.width} × ${s.h
           {d.customSizes && <p class="hint"><Icon name="ruler" />{t.customSize}</p>}
         </fieldset>
       ) : (
-        <p class="hint" style="margin:0"><Icon name="ruler" />{d.category === 'floors' ? t.areaHint : t.measureOnSite}</p>
+        <p class="hint" style="margin:0"><Icon name="ruler" />{d.category === 'floors' ? t.areaHint : ['kitchens', 'dressing'].includes(d.category) ? t.spaceHint : t.measureOnSite}</p>
       )}
 
       <div class="pd-cta">

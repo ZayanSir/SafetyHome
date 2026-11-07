@@ -1,0 +1,24 @@
+{
+  "title": "دريسنج روم موديل DR-01",
+  "titleEn": "Dressing room model DR-01",
+  "category": "dressing",
+  "model": "DR-01",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/dressing-dr-01/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/dressing-dr-01/g1.webp"
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 1,
+  "note": "",
+  "noteEn": ""
+}

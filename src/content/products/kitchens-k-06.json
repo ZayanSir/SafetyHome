@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-06",
+  "titleEn": "Kitchen model K-06",
+  "category": "kitchens",
+  "model": "K-06",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-06/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "hidden": false,
+  "order": 6,
+  "note": "",
+  "noteEn": ""
+}

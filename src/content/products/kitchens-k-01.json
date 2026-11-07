@@ -1,0 +1,24 @@
+{
+  "title": "مطبخ موديل K-01",
+  "titleEn": "Kitchen model K-01",
+  "category": "kitchens",
+  "model": "K-01",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-01/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/kitchens-k-01/g1.webp"
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 1,
+  "note": "",
+  "noteEn": ""
+}

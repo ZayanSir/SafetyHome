@@ -115,7 +115,7 @@ export const CATEGORIES: Category[] = [
     specsEn: [['Size', 'Made to fit your kitchen — we measure on site'], ['Design', 'Designed with you before production'], ['Installation', 'By the Safety Home team']],
     featuresAr: ['تفصيل على المقاس', 'ألوان وخامات كتير', 'تركيب'],
     featuresEn: ['Made to measure', 'Many colors and finishes', 'Installation'],
-    cover: '',
+    cover: '/products/kitchens-k-09/main-sm.webp',
   },
   {
     slug: 'dressing',
@@ -129,7 +129,7 @@ export const CATEGORIES: Category[] = [
     specsEn: [['Size', 'Made to fit your room — we measure on site'], ['Design', 'Designed with you before production'], ['Installation', 'By the Safety Home team']],
     featuresAr: ['تفصيل على المقاس', 'تقسيمات حسب احتياجك', 'تركيب'],
     featuresEn: ['Made to measure', 'Layout to your needs', 'Installation'],
-    cover: '',
+    cover: '/products/dressing-dr-02/main-sm.webp',
   },
   {
     slug: 'floors',

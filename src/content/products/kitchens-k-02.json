@@ -1,0 +1,24 @@
+{
+  "title": "مطبخ موديل K-02",
+  "titleEn": "Kitchen model K-02",
+  "category": "kitchens",
+  "model": "K-02",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-02/main.webp"
+    }
+  ],
+  "gallery": [
+    "/products/kitchens-k-02/g1.webp"
+  ],
+  "sizes": [],
+  "customSizes": true,
+  "featured": true,
+  "hidden": false,
+  "order": 2,
+  "note": "",
+  "noteEn": ""
+}

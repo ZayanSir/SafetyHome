@@ -1,0 +1,22 @@
+{
+  "title": "مطبخ موديل K-05",
+  "titleEn": "Kitchen model K-05",
+  "category": "kitchens",
+  "model": "K-05",
+  "line": "",
+  "lineEn": "",
+  "variants": [
+    {
+      "color": "",
+      "image": "/products/kitchens-k-05/main.webp"
+    }
+  ],
+  "gallery": [],
+  "sizes": [],
+  "customSizes": true,
+  "featured": false,
+  "hidden": false,
+  "order": 5,
+  "note": "",
+  "noteEn": ""
+}
